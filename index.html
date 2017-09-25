@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="connectorValidator.js"></script>
+	<script>
+		(function() {
+			'use strict';
+
+			document.addEventListener("DOMContentLoaded", function(event) {
+				var test = new ConnectorValidator(2000); // Tiempo calculado para la respuesta
+				test.then(function(resp) { // Respuesta ok en el tiempo estimado
+					console.log(resp);
+				}).catch(function(error) { // Respuesta erronea en el tiempo estimado
+					console.log(error);
+				});
+			});
+		})();
+	</script>
+</body>
+</html>
