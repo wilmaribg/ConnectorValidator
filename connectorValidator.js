@@ -2,9 +2,8 @@
 
 	'use strict';
 
-	if(self.ConnectorValidator) {
-		return null;
-	}else {
+	if(! self.ConnectorValidator) {
+
 		self.ConnectorValidator = function(timeout) {
 			return new Promise((resolve, reject) => {
 				let selfTimeout = timeout || 3000;
@@ -22,6 +21,7 @@
 				xhr.send("title=foo&body=bar&userId=1"); 
 			});
 		}
+		
 	}
 
 })(window);
